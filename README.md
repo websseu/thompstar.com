@@ -96,6 +96,6 @@ npx shadcn@latest add select
 ```
 
 ```
-npx shadcn@latest add button card toast input carousel table form dropdown-menu dialog alert-dialog textarea checkbox progress popover
+npx shadcn@latest add button card toast input carousel table form dropdown-menu dialog alert-dialog textarea checkbox progress popover select
 npm i embla-carousel-autoplay
 ```
