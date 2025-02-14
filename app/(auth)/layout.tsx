@@ -9,7 +9,7 @@ export default async function AuthLayout({
     <>
       <header className='absolute left-2 top-2'>
         <h1>
-          <Link href={'/'} className='bg-black text-white px-2'>
+          <Link href={'/'} className='bg-black text-white px-2 font-poppins'>
             story
           </Link>
         </h1>

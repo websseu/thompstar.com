@@ -81,7 +81,7 @@ export default async function AdminUserPage(props: {
               <TableCell className='text-center'>{user.visitCount}</TableCell>
               <TableCell className='text-center'>
                 <Button asChild variant='outline' size='sm'>
-                  <Link href={`/admin/users/${user._id}`}>Edit</Link>
+                  <Link href={`/admin/users/${user._id}`}>수정</Link>
                 </Button>
                 <DeleteDialog id={user._id.toString()} action={deleteUser} />
               </TableCell>

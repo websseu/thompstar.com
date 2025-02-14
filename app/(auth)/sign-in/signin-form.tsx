@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { redirect, useSearchParams } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -10,6 +9,7 @@ import { signInWithCredentials } from '@/lib/actions/user.actions'
 import { toast } from '@/hooks/use-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { isRedirectError } from 'next/dist/client/components/redirect-error'
+import { UserSignInSchema } from '@/lib/validator'
 import {
   Form,
   FormControl,
@@ -18,7 +18,6 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { UserSignInSchema } from '@/lib/validator'
 
 const signInDefaultValues =
   process.env.NODE_ENV === 'development'
@@ -79,7 +78,9 @@ export default function SignInForm() {
             name='email'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel className='text-black300'>Email</FormLabel>
+                <FormLabel className='text-black800 font-poppins'>
+                  Email
+                </FormLabel>
                 <FormControl>
                   <Input
                     className='border-black100'
@@ -97,7 +98,9 @@ export default function SignInForm() {
             name='password'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel className='text-black300'>Password</FormLabel>
+                <FormLabel className='text-black800 font-poppins'>
+                  Password
+                </FormLabel>
                 <FormControl>
                   <Input
                     className='border-black100'
@@ -115,28 +118,10 @@ export default function SignInForm() {
             <Button
               type='submit'
               variant='default'
-              className='w-full py-6 bg-black100 text-white hover:bg-black100'
+              className='w-full py-6 bg-black100 text-white hover:bg-black100 font-poppins'
             >
               Sign In
             </Button>
-          </div>
-          <div className='text-sm font-nanum text-black300 leading-5 text-center'>
-            로그인하시면 저희의{' '}
-            <Link href='/page/conditions-of-use' className='uline'>
-              이용약관
-            </Link>
-            과{' '}
-            <Link href='/page/privacy-policy' className='uline'>
-              개인정보처리방침
-            </Link>
-            에 동의하신 것으로 간주됩니다. 소중한 정보를 안전하게 지킬 것을
-            약속드려요. 💌
-            <p className='mt-2'>
-              아직 회원 가입 전이라면?{' '}
-              <Link href='/sign-up' className='uline'>
-                회원가입
-              </Link>
-            </p>
           </div>
         </div>
       </form>

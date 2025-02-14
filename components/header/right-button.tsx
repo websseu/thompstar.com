@@ -48,7 +48,7 @@ export default async function RightButton() {
         </DropdownMenuTrigger>
         {session ? (
           <DropdownMenuContent
-            className='w-56 mr-0 mt-2 bg-background border-black400 ring ring-black500 dark:ring-0'
+            className='w-56 mr-0 mt-1 bg-background ring ring-gray-300/20 hover:ring-gray-300/60 dark:ring-gray-900/20 dark:border-black100'
             align='end'
             forceMount
           >
@@ -96,7 +96,7 @@ export default async function RightButton() {
           </DropdownMenuContent>
         ) : (
           <DropdownMenuContent
-            className='w-56 mr-1 bg-background'
+            className='w-56 mr-0 mt-1 bg-background ring ring-gray-300/20 hover:ring-gray-300/60 dark:ring-gray-900/20 dark:border-black100'
             align='end'
             forceMount
           >
@@ -114,8 +114,8 @@ export default async function RightButton() {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuLabel>
-              <div className='font-normal font-nanum text-center text-black300 mb-1'>
-                반가워요! 😊 <br />
+              <div className='font-normal font-nanum text-center text-black300 dark:text-black100 mb-1'>
+                <p className='mb-1'>반가워요! 😊</p>
                 아직 계정이 없으신가요? <br />
                 <Link href='/sign-up' className='underline underline-offset-4'>
                   회원가입

@@ -209,4 +209,16 @@
   .sperator span {
     @apply bg-background px-4;
   }
+  .table {
+    @apply font-nanum border-t border-b border-t-black400 border-b-black400;
+  }
+  .table th {
+    @apply text-center;
+  }
+  .table tr {
+    @apply border-b border-t-black400;
+  }
+  .small {
+    @apply text-[10px];
+  }
 }

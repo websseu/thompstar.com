@@ -102,7 +102,9 @@ export default function SignUpForm() {
             name='name'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel className='text-black100'>Name</FormLabel>
+                <FormLabel className='text-black800 font-poppins'>
+                  Name
+                </FormLabel>
                 <FormControl>
                   <Input
                     className='border-black300'
@@ -120,7 +122,9 @@ export default function SignUpForm() {
             name='email'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel className='text-black100'>Email</FormLabel>
+                <FormLabel className='text-black800 font-poppins'>
+                  Email
+                </FormLabel>
                 <FormControl>
                   <Input
                     className='border-black300'
@@ -138,7 +142,9 @@ export default function SignUpForm() {
             name='password'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel className='text-black100'>Password</FormLabel>
+                <FormLabel className='text-black800 font-poppins'>
+                  Password
+                </FormLabel>
                 <FormControl>
                   <Input
                     type='password'
@@ -156,7 +162,7 @@ export default function SignUpForm() {
             name='confirmPassword'
             render={({ field }) => (
               <FormItem className='w-full'>
-                <FormLabel className='text-black100'>
+                <FormLabel className='text-black800 font-poppins'>
                   Confirm Password
                 </FormLabel>
                 <FormControl>

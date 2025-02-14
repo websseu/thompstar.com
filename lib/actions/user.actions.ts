@@ -10,8 +10,8 @@ import User, { IUser } from '../db/models/user.model'
 import bcrypt from 'bcryptjs'
 import crypto from 'crypto'
 import { sendVerificationEmail } from '../email'
-import { formatError } from '../utils'
 import { z } from 'zod'
+import { formatError } from '../utils'
 
 // 로그인(이메일/비밀번호)
 export async function signInWithCredentials(user: IUserSignIn) {
@@ -22,6 +22,16 @@ export async function signInWithCredentials(user: IUserSignIn) {
 export const SignOut = async () => {
   await signOut({ redirect: false })
   redirect('/sign-in')
+}
+
+// 구글 로그인
+export const SignInWithGoogle = async () => {
+  await signIn('google')
+}
+
+// 깃헙 로그인
+export const SignInWithGithub = async () => {
+  await signIn('github')
 }
 
 // 회원가입
