@@ -1,21 +1,212 @@
+@font-face {
+  font-family: 'NanumSquareNeo';
+  src: url('/fonts/NanumSquareNeo-Regular.woff2') format('woff2');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo';
+  src: url('/fonts/NanumSquareNeo-Light.woff2') format('woff2');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo';
+  src: url('/fonts/NanumSquareNeo-Bold.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo';
+  src: url('/fonts/NanumSquareNeo-ExtraBold.woff2') format('woff2');
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo';
+  src: url('/fonts/NanumSquareNeo-Black.woff2') format('woff2');
+  font-weight: 900; /* Black */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NexonLv1Gothic';
+  src: url('/fonts/NexonLv1Gothic-Light.woff2') format('woff2');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NexonLv1Gothic';
+  src: url('/fonts/NexonLv1Gothic-Regular.woff2') format('woff2');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NexonLv1Gothic';
+  src: url('/fonts/NexonLv1Gothic-Bold.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/fonts/GmarketSans-Light.woff2') format('woff2');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/fonts/GmarketSans-Medium.woff2') format('woff2');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/fonts/GmarketSans-Bold.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --fontN: 'NanumSquareNeo', sans-serif;
+  --fontX: 'NexonLv1Gothic', sans-serif;
+  --fontG: 'GmarketSans', sans-serif;
+  --fontP: 'Poppins', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 51 33% 96%;
+    --foreground: 0 0% 16%;
+
+    --black100: #000000;
+    --black200: #282727;
+    --black300: #373737;
+    --black400: #454545;
+    --black500: #505050;
+    --black600: #656565;
+    --black700: #737373;
+    --black800: #8a8a8a;
+    --black900: #9b9b9b;
+
+    --white100: #ffffff;
+    --white200: #f1f1f1;
+    --white300: #e7e7e7;
+    --white400: #dddddd;
+    --white500: #d1d1d1;
+    --white600: #c7c7c7;
+    --white700: #b7b7b7;
+    --white800: #acacac;
+    --white900: #9b9b9b;
+  }
+  .dark {
+    --background: 135 49% 34%;
+    --foreground: 60 5% 91%;
+
+    --black100: #000000;
+    --black200: #282727;
+    --black300: #373737;
+    --black400: #454545;
+    --black500: #505050;
+    --black600: #656565;
+    --black700: #737373;
+    --black800: #8a8a8a;
+    --black900: #9b9b9b;
+
+    --white100: #ffffff;
+    --white200: #f1f1f1;
+    --white300: #e7e7e7;
+    --white400: #dddddd;
+    --white500: #d1d1d1;
+    --white600: #c7c7c7;
+    --white700: #b7b7b7;
+    --white800: #acacac;
+    --white900: #9b9b9b;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--fontN), var(--fontP);
+  }
+}
+
+@layer components {
+  /* header */
+  .header__nav {
+    @apply fixed font-poppins md:absolute md:bottom-auto bottom-0 w-full md:top-[99px] z-50;
+  }
+  .header__nav ul {
+    @apply flex md:justify-center justify-evenly bg-slate-900/20 backdrop-blur-md md:bg-transparent md:backdrop-blur-0;
+  }
+  .header__nav ul li a {
+    @apply md:bg-background md:py-0 py-3 bg-transparent px-2 text-sm text-black100 inline-block;
+  }
+  .header__nav ul li a:hover {
+    @apply text-black500;
+  }
+  .header__nav ul li.active a {
+    @apply underline underline-offset-4;
+  }
+  .header__nav ul li:first-child a {
+    @apply pl-6;
+  }
+  .header__nav ul li:last-child a {
+    @apply pr-6;
+  }
+
+  /* main */
+  .main__container {
+    @apply max-w-6xl mx-auto mt-7 sm:mt-14 p-4 min-h-[40vh];
+  }
+
+  /* footer */
+  .footer__container {
+    @apply max-w-6xl mx-auto p-4 mt-20;
+  }
+
+  /* common */
+  .circle {
+    @apply w-9 h-9 bg-background rounded-full items-center justify-center border ring ring-gray-300/20 hover:ring-gray-300/60 dark:ring-gray-900/20 dark:border-black100 flex cursor-pointer;
+  }
+  .line {
+    @apply relative w-full;
+  }
+  .line::before {
+    content: '';
+    @apply absolute left-0 top-1/2 w-full h-[1px] bg-black/20 dark:bg-black/20 -translate-y-1/2 z-[-1];
+  }
+  .uline {
+    @apply underline underline-offset-4;
+  }
+  .sperator {
+    @apply text-center text-black700 text-sm;
+  }
+  .sperator span {
+    @apply bg-background px-4;
+  }
 }
