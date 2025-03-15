@@ -98,7 +98,9 @@ API 서버 구축 (선택 사항):
 - 데이터베이스: MongoDB는 MongoDB Atlas 등 클라우드 서비스를 사용하여 안정적인 운영 보장
 - 데이터 자동화: GitHub Actions 워크플로우를 통해 정기적으로 데이터 업데이트를 실행
 
-## vscode-extensions
+## 5. 설정
+
+### vscode-extensions
 
 1.  eslint
 2.  Prettier - Code formatter
@@ -107,7 +109,7 @@ API 서버 구축 (선택 사항):
 5.  es7+ react snippets
 6.  pretty typescript errors
 
-## setting.json
+### setting.json
 
 ```js
 {
@@ -128,7 +130,7 @@ API 서버 구축 (선택 사항):
 }
 ```
 
-## document
+### document
 
 1. based on docs at https://nextjs.org/docs/app/getting-started/installation run
 2. based on docs at https://ui.shadcn.com/docs/installation/next run
@@ -138,7 +140,7 @@ API 서버 구축 (선택 사항):
 6. based on docs at https://vercel.com/ run
 7. based on docs at https://authjs.dev/ run
 
-## 01. install
+### install
 
 ```
 npx create-next-app@latest ./
