@@ -18,7 +18,7 @@ export function getDayFormatted(date: Date = new Date()): string {
 }
 
 // 날짜 "YYYY년 M월 D일(요일)"
-export function getFormattedDateWithWeekday(date: Date = new Date()): string {
+export function getDayFormattedWeekday(date: Date = new Date()): string {
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'numeric',

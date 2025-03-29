@@ -48,3 +48,24 @@ export type IUserName = z.infer<typeof UserNameSchema>
 // 글 목록
 export type IPostInput = z.infer<typeof PostInputSchema>
 export type IPostUpdate = z.infer<typeof PostUpdateSchema>
+
+// 음악 차트 데이터
+export type MusicItem = {
+  title: string
+  artist: string
+  image: string
+  youtubeID: string
+}
+
+export type MusicData = {
+  [platform: string]: MusicItem[]
+}
+
+export type ChartItem = {
+  ranking: string
+  title: string
+  artist: string
+  image: string
+  album: string
+  youtubeID?: string
+}

@@ -1,4 +1,4 @@
-export async function fetchChartKoreaData(koreaService: string, date: string) {
+export async function fetchKoreaData(koreaService: string, date: string) {
   try {
     const response = await fetch(
       `https://websseu.github.io/thompdata/korea/${koreaService}/${koreaService}Top100_${date}.json`
@@ -15,7 +15,7 @@ export async function fetchChartKoreaData(koreaService: string, date: string) {
   }
 }
 
-export async function fetchChartWorldData(
+export async function fetchWorldData(
   worldService: string,
   country: string,
   date: string
@@ -36,7 +36,7 @@ export async function fetchChartWorldData(
   }
 }
 
-export async function fetchChartMainKoreaData(date: string) {
+export async function fetchMainKoreaData(date: string) {
   try {
     const response = await fetch(
       `https://websseu.github.io/thompdata/main/korea-main_${date}.json`
@@ -53,7 +53,7 @@ export async function fetchChartMainKoreaData(date: string) {
   }
 }
 
-export async function fetchChartMainYoutubeData(date: string) {
+export async function fetchMainYoutubeData(date: string) {
   try {
     const response = await fetch(
       `https://websseu.github.io/thompdata/main2/youtube-main_${date}.json`

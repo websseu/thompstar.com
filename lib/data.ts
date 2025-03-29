@@ -49,11 +49,6 @@ const data: Data = {
       href: '/world/apple',
       description: '국내 최대 음원 플랫폼, 다양한 장르와 최신 음악 제공',
     },
-    {
-      title: 'Spotify',
-      href: '/world/spotify',
-      description: '국내 최대 음원 플랫폼, 다양한 장르와 최신 음악 제공',
-    },
   ],
   youtubeCountry: [
     {

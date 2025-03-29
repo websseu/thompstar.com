@@ -4,8 +4,8 @@ import { auth } from '@/auth'
 import { SignOut } from '@/lib/actions/user.actions'
 import { GiWolfHowl } from 'react-icons/gi'
 import { Button } from '@/components/ui/button'
-import { getFormattedDateWithWeekday } from '@/lib/utils'
 import { BadgeCheck, Bell, FolderLock, NotebookPen, Crown } from 'lucide-react'
+import { getDayFormattedWeekday } from '@/lib/utils'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -106,7 +106,7 @@ export default async function UserButton() {
                 </div>
                 <div>
                   <p className='text-zinc-800 font-medium mt-0.5'>
-                    {getFormattedDateWithWeekday(new Date())}
+                    {getDayFormattedWeekday(new Date())}
                   </p>
                 </div>
               </div>
