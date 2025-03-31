@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import { Toaster } from 'sonner'
+import { MusicProvider } from '@/context/music-context'
 import YoutubePlayer from '@/components/play/youtube-player'
 import {
   APP_DESCRIPTION,
@@ -57,10 +58,20 @@ export default function RootLayout({
   return (
     <html lang='ko' suppressHydrationWarning>
       <body>
-        <Toaster position='top-center' />
+        <Toaster
+          position='top-center'
+          toastOptions={{
+            classNames: {
+              title: 'font-nanum font-bold',
+              description: 'font-nanum text-xs',
+            },
+          }}
+        />
         <ThemeProvider attribute='class'>
-          {children}
-          <YoutubePlayer />
+          <MusicProvider>
+            {children}
+            <YoutubePlayer />
+          </MusicProvider>
         </ThemeProvider>
       </body>
     </html>

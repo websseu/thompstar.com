@@ -310,7 +310,7 @@
 
   /* nav */
   .nav {
-    @apply absolute z-50 left-1/2 top-[99px] bg-background px-3 translate-x-[-50%] font-poppins hidden md:block;
+    @apply absolute z-10 left-1/2 top-[99px] bg-background px-3 translate-x-[-50%] font-poppins hidden md:block;
   }
 
   /* music__list */
@@ -339,7 +339,7 @@
     @apply absolute inset-0 m-auto text-white opacity-0 transition;
   }
   .music__list .image .bg {
-    @apply absolute inset-0 bg-black/60 rounded opacity-0 transition;
+    @apply absolute inset-0 rounded opacity-0 transition;
   }
   .music__list .title {
     @apply px-2 overflow-hidden;
@@ -368,17 +368,45 @@
   }
 
   /* youtube__player */
-  .youtube__player {
-    @apply fixed z-50 left-0 bottom-0 w-full bg-background/2 backdrop-blur-2xl;
+  .player__controls {
+    @apply fixed z-40 left-0 bottom-0 w-full bg-background/2 backdrop-blur-2xl;
   }
+  .youtube__list {
+    @apply fixed z-40 right-0 top-0 h-screen bg-background w-[300px] p-4 border-l;
+  }
+
+  .player__position {
+    @apply fixed left-0 bg-background;
+  }
+
   .player__controls {
     @apply flex items-center justify-between h-[60px];
+  }
+  .player__controls .bar {
+    @apply absolute left-0 top-[-1px] w-full border-t;
+  }
+  .player__controls .progress {
+    @apply absolute left-0 top-[-2px] h-[2px] bg-red-500 transition-all duration-100 ease-linear;
   }
   .player__controls .center {
     @apply flex items-center justify-between gap-2;
   }
-  .player__controls .center span {
+  .player__controls .center button {
     @apply inline-block p-2 hover:bg-red-50 rounded-full cursor-pointer;
+  }
+  .player__controls .right {
+    @apply mr-4 mt-1;
+  }
+  .player__controls .right button {
+    @apply inline-block p-2 hover:bg-red-50 rounded-full cursor-pointer;
+  }
+
+  /* calendar */
+  .calendar {
+    @apply flex justify-center absolute left-0 top-10 text-sm rounded-sm border z-50 bg-background;
+  }
+  .calendar .rdp-caption_label {
+    @apply p-3;
   }
 
   /* common */

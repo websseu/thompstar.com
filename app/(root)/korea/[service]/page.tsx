@@ -2,6 +2,7 @@ import React from 'react'
 import { getDayFormatted } from '@/lib/utils'
 import { fetchKoreaData } from '@/hook/fetch'
 import MusicListCol from '@/components/music/music-list-col'
+import Calendar from '@/components/music/calendar'
 
 export async function generateMetadata(props: {
   params: Promise<{ service: string }>
@@ -25,6 +26,7 @@ export default async function KoreaMusicPage(props: {
 
   return (
     <section>
+      <Calendar date={date} service={service} basePath='/korea' />
       <MusicListCol chartData={chartData} />
     </section>
   )

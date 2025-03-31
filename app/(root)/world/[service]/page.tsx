@@ -2,6 +2,7 @@ import React from 'react'
 import { getDayFormatted } from '@/lib/utils'
 import { fetchWorldData } from '@/hook/fetch'
 import MusicListCol from '@/components/music/music-list-col'
+import Calendar from '@/components/music/calendar'
 
 export async function generateMetadata(props: {
   params: Promise<{ service: string }>
@@ -26,6 +27,12 @@ export default async function WorldMusicPage(props: {
 
   return (
     <section>
+      <Calendar
+        date={date}
+        service={service}
+        country={country}
+        basePath='/world'
+      />
       <MusicListCol chartData={chartData} />
     </section>
   )

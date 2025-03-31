@@ -160,6 +160,7 @@ npm i @hookform/resolvers
 npm install nodemailer
 npm i --save-dev @types/nodemailer
 npm i react-youtube --legacy-peer-deps
+npm i react-day-picker
 ```
 
 ```
