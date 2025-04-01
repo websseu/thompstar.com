@@ -36,7 +36,6 @@ export default function MusicListRow({ koreaData }: { koreaData: MusicData }) {
                 <ul key={groupIdx}>
                   {group.map((item, index) => {
                     const isCurrent = currentSong?.youtubeId === item.youtubeID
-
                     return (
                       <li
                         key={index}
