@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useMusic } from '@/context/music-context'
 import { LuListMusic } from 'react-icons/lu'
 import {
@@ -16,9 +16,23 @@ interface YoutubePlayerControlsProps {
 }
 
 export default function YoutubePlayerControls({
+  showList,
   toggleList,
 }: YoutubePlayerControlsProps) {
   const { prevSong, nextSong, togglePlay, isPlaying, progress } = useMusic()
+
+  // ✅ showList 상태 변화에 따라 body 스크롤 제어
+  useEffect(() => {
+    if (showList) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [showList])
 
   return (
     <div className='player__controls'>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useMusic } from '@/context/music-context'
-import { Trash, Disc3 } from 'lucide-react'
+import { Trash, Disc3, Music } from 'lucide-react'
 import React from 'react'
 
 export default function YoutubePlaylist({
@@ -18,9 +18,12 @@ export default function YoutubePlaylist({
   return (
     <div className='youtube__list'>
       <div className='title'>
-        <h2 className='mb-1'>Play List</h2>
+        <h2 className='mb-1 flex items-center gap-1'>
+          <Music size={16} />
+          Play List
+        </h2>
       </div>
-      <div>
+      <div className='h-screen overflow-y-auto w-full pb-[120px]'>
         <ul>
           {playlist.length === 0 ? (
             <li className='text-sm text-zinc-700'>

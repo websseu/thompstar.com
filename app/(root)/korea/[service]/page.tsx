@@ -3,6 +3,7 @@ import { getDayFormatted } from '@/lib/utils'
 import { fetchKoreaData } from '@/hook/fetch'
 import MusicListCol from '@/components/music/music-list-col'
 import Calendar from '@/components/music/calendar'
+import PlayListAdd from '@/components/music/playList-add'
 
 export async function generateMetadata(props: {
   params: Promise<{ service: string }>
@@ -26,7 +27,10 @@ export default async function KoreaMusicPage(props: {
 
   return (
     <section>
-      <Calendar date={date} service={service} basePath='/korea' />
+      <div className='flex gap-1'>
+        <Calendar date={date} service={service} basePath='/korea' />
+        <PlayListAdd chartData={chartData} />
+      </div>
       <MusicListCol chartData={chartData} />
     </section>
   )

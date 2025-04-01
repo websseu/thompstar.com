@@ -176,6 +176,7 @@ npx shadcn@latest add textarea
 npx shadcn@latest add popover
 npx shadcn@latest add table
 npx shadcn@latest add tooltip
+npx shadcn@latest add scroll-area
 ```
 
 ### version

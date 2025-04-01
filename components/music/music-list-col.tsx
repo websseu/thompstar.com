@@ -1,7 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
 import { ChartItem } from '@/lib/types'
 import { Button } from '../ui/button'
 import { SiYoutubemusic } from 'react-icons/si'
@@ -54,7 +54,7 @@ export default function MusicListCol({
 
           return (
             <div
-              key={item.ranking}
+              key={`${item.title}-${item.artist}`}
               className={`music__list group ${isCurrent ? 'bg-red-50' : ''}`}
               onClick={() => handleAddToTopList(item)}
             >
