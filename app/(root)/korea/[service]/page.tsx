@@ -27,7 +27,7 @@ export default async function KoreaMusicPage(props: {
 
   return (
     <section>
-      <div className='flex gap-1'>
+      <div className='gap-1 hidden block:flex'>
         <Calendar date={date} service={service} basePath='/korea' />
         <PlayListAdd chartData={chartData} />
       </div>

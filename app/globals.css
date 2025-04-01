@@ -310,7 +310,7 @@
 
   /* nav */
   .nav {
-    @apply absolute z-10 left-1/2 sm:top-[99px] top-[68px] bg-background px-3 translate-x-[-50%] font-poppins;
+    @apply absolute z-10 left-1/2 sm:top-[99px] top-[68px] bg-background px-3 translate-x-[-50%] font-poppins hidden md:block;
   }
 
   /* music__list */
@@ -372,7 +372,7 @@
     @apply fixed z-40 left-0 bottom-0 w-full bg-background/2 backdrop-blur-2xl;
   }
   .player__controls .left {
-    @apply sm:w-[100px] w-[200px];
+    @apply sm:w-[100px] w-[160px];
   }
   .player__controls .right {
     @apply w-[100px] text-right;

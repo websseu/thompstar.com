@@ -50,7 +50,10 @@ export default function MusicListCol({
     <div className='music__box col'>
       <div className='content'>
         {chartData.map((item) => {
-          const isCurrent = currentSong?.youtubeId === item.youtubeID
+          const isCurrent =
+            !!item.youtubeID &&
+            !!currentSong?.youtubeId &&
+            currentSong.youtubeId === item.youtubeID
 
           return (
             <div
@@ -67,20 +70,24 @@ export default function MusicListCol({
                   alt={item.title}
                 />
 
-                <div
-                  className={`bg bg-black/60 ${
-                    isCurrent
-                      ? 'opacity-100'
-                      : 'opacity-0 group-hover:opacity-100'
-                  }`}
-                />
-                <FaPlay
-                  className={` ${
-                    isCurrent
-                      ? 'opacity-100 text-red-500'
-                      : 'opacity-0 group-hover:opacity-100'
-                  }`}
-                />
+                {item.youtubeID && (
+                  <>
+                    <div
+                      className={`bg bg-black/60 ${
+                        isCurrent
+                          ? 'opacity-100'
+                          : 'opacity-0 group-hover:opacity-100'
+                      }`}
+                    />
+                    <FaPlay
+                      className={` ${
+                        isCurrent
+                          ? 'opacity-100 text-red-500'
+                          : 'opacity-0 group-hover:opacity-100'
+                      }`}
+                    />
+                  </>
+                )}
               </div>
               <div className='title'>
                 <p>{item.title}</p>
