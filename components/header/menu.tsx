@@ -22,7 +22,7 @@ export default function Menu() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Started</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className='grid gap-3 p-4 md:w-[400px] lg:w-[600px] lg:grid-cols-[.85fr_1fr]'>
+              <ul className='grid gap-3 p-1 sm:p-4 md:w-[300px] lg:w-[600px] lg:grid-cols-[.85fr_1fr]'>
                 <li className='row-span-3'>
                   <NavigationMenuLink asChild>
                     <Link
@@ -58,7 +58,7 @@ export default function Menu() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Korea</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className='grid w-[400px] p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] '>
+              <ul className='grid w-[300px] p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] '>
                 {data.koreaMenu.map((korea) => (
                   <MenuItem
                     key={korea.title}
@@ -75,7 +75,7 @@ export default function Menu() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>World</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className='grid w-[400px] p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] '>
+              <ul className='grid w-[300px] p-2 md:w-[500px] md:grid-cols-2 lg:w-[600px] '>
                 {data.worldMenu.map((world) => (
                   <MenuItem
                     key={world.title}
