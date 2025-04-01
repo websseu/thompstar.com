@@ -5,6 +5,8 @@ import { ThemeProvider } from 'next-themes'
 import { Toaster } from 'sonner'
 import { MusicProvider } from '@/context/music-context'
 import YoutubePlayer from '@/components/play/youtube-player'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import {
   APP_DESCRIPTION,
   APP_SITE_URL,
@@ -67,6 +69,8 @@ export default function RootLayout({
             },
           }}
         />
+        <Analytics />
+        <SpeedInsights />
         <ThemeProvider attribute='class'>
           <MusicProvider>
             {children}

@@ -305,7 +305,7 @@
 
   /* footer */
   .footer__container {
-    @apply max-w-6xl mx-auto py-4 mt-20 px-4;
+    @apply max-w-6xl mx-auto py-4 mt-20 px-4 pb-20;
   }
 
   /* nav */
