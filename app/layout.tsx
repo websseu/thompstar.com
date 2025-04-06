@@ -15,6 +15,7 @@ import {
   APP_KEYWORDS,
 } from '@/lib/constants'
 import Shortcuts from '@/components/music/shortcuts'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: {
@@ -60,6 +61,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='ko' suppressHydrationWarning>
+      <head>
+        <Script
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5913874937139786'
+          crossOrigin='anonymous'
+          strategy='afterInteractive'
+        />
+      </head>
       <body>
         <Toaster
           position='top-center'
