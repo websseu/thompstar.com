@@ -305,7 +305,7 @@
 
   /* footer */
   .footer__container {
-    @apply max-w-6xl mx-auto py-4 mt-20 px-4 pb-20;
+    @apply max-w-6xl mx-auto py-4 px-4 mt-20 pb-20;
   }
 
   /* nav */
@@ -326,11 +326,14 @@
   .music__box .content > ul {
     @apply flex flex-col;
   }
+  .music__box .more {
+    @apply absolute right-0 top-2;
+  }
   .music__list {
     @apply flex items-center border-b border-dashed py-2 hover:bg-accent hover:cursor-pointer relative;
   }
   .music__list .ranking {
-    @apply w-[40px] text-center font-poppins shrink-0;
+    @apply w-[30px] sm:w-[40px] text-sm sm:text-base text-center font-poppins shrink-0;
   }
   .music__list .image {
     @apply w-[40px] h-[40px] shrink-0 rounded overflow-hidden relative;

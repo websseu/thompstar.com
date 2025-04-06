@@ -50,15 +50,15 @@ export default function YoutubePlayer() {
 
   return (
     <>
-      {/* 재생 목록 */}
-      <YoutubePlaylist show={showList} onSelect={setCurrentSongIndex} />
-
       {/* 유튜브 영상 위치 */}
       <YoutubePlayerPosition
         showList={showList}
         playerSize={playerSize}
         opts={opts}
       />
+
+      {/* 재생 목록 */}
+      <YoutubePlaylist show={showList} onSelect={setCurrentSongIndex} />
 
       {/* 뮤직 플레이어 컨트롤 */}
       <YoutubePlayerControls

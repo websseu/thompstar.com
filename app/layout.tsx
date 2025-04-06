@@ -14,6 +14,7 @@ import {
   APP_TITLE,
   APP_KEYWORDS,
 } from '@/lib/constants'
+import Shortcuts from '@/components/music/shortcuts'
 
 export const metadata: Metadata = {
   title: {
@@ -74,6 +75,7 @@ export default function RootLayout({
         <ThemeProvider attribute='class'>
           <MusicProvider>
             {children}
+            <Shortcuts />
             <YoutubePlayer />
           </MusicProvider>
         </ThemeProvider>

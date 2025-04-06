@@ -4,6 +4,8 @@ import React from 'react'
 import Image from 'next/image'
 import { MusicData, MusicItem } from '@/lib/types'
 import { useMusic } from '@/context/music-context'
+import Link from 'next/link'
+import { CirclePlus } from 'lucide-react'
 
 export default function MusicListRow({ koreaData }: { koreaData: MusicData }) {
   const { addToTopList, currentSong } = useMusic()
@@ -29,7 +31,7 @@ export default function MusicListRow({ koreaData }: { koreaData: MusicData }) {
         return (
           <div key={platform} className='music__box'>
             <div className='title'>
-              <h2>{platform} Top100</h2>
+              <h2>{platform}</h2>
             </div>
             <div className='content'>
               {grouped.map((group, groupIdx) => (
@@ -45,7 +47,9 @@ export default function MusicListRow({ koreaData }: { koreaData: MusicData }) {
                         onClick={() => handleAddToTopList(item)}
                       >
                         <div className='ranking'>
-                          {groupIdx * 5 + index + 1}
+                          <span className={item.youtubeID ? '' : 'opacity-30'}>
+                            {groupIdx * 5 + index + 1}
+                          </span>
                         </div>
                         <div className='image'>
                           <Image
@@ -65,6 +69,9 @@ export default function MusicListRow({ koreaData }: { koreaData: MusicData }) {
                 </ul>
               ))}
             </div>
+            <Link className='more' href={`/korea/${platform}`}>
+              <CirclePlus size={18} />
+            </Link>
           </div>
         )
       })}

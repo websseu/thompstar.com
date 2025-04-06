@@ -61,7 +61,9 @@ export default function MusicListCol({
               className={`music__list group ${isCurrent ? 'bg-red-50' : ''}`}
               onClick={() => handleAddToTopList(item)}
             >
-              <div className='ranking'>{item.ranking}</div>
+              <div className={`ranking ${!item.youtubeID ? 'opacity-30' : ''}`}>
+                {item.ranking}
+              </div>
               <div className='image'>
                 <Image
                   src={item.image}
